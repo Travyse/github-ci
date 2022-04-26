@@ -29,6 +29,7 @@ R --slave -e "BiocManager::install('VariantAnnotation')"
 # LDtools package was used for summary stats merger script to handle strand flips
 # QTL packages was used for Normalization of gene Count Table and TPM in Phenotype Normalization modules
 pip install qtl LDtools
+echo "WOW"
                                      
 cd /tmp && wget http://s3.amazonaws.com/plink1-assets/plink_linux_x86_64_20200616.zip && \
 unzip -o  plink_linux_x86_64_20200616.zip && mv plink /usr/local/bin && rm -rf /tmp/plink*
