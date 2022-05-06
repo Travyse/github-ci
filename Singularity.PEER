@@ -19,6 +19,7 @@ python3-venv \
 python3-wheel \
 python3-pip \
 python3-setuptools \
+python-is-python3 \
 libpq-dev \
 libpng-dev \
 libpcre2-dev \
