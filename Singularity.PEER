@@ -14,8 +14,6 @@ apt-get update && \
 DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 default-jdk \
 cpp \
-python3-dev \
-python3-venv \
 python3-wheel \
 python3-pip \
 python3-setuptools \
@@ -62,22 +60,12 @@ tar xzvf xz-5.2.2.tar.gz && cd xz-5.2.2 && ./configure && make && make install &
 tar -xzf R-4.2.0.tar.gz && cd R-4.2.0 && ./configure --prefix=/usr/lib/R/ --with-blas --with-readline=no && \
 make && make install && ln -s /usr/lib/R/bin/R /bin/R && ln -s /usr/lib/R/bin/Rscript /bin/Rscript && \
 cd .. && rm -rf R-4.2.0*
-pip3 install wheel
-alias python=python3
-pip3 install mofapy2
-
-# Install Python PEER
-wget https://github.com/downloads/PMBio/peer/peer_source_1.3.tar.gz \
-    && tar -xvf peer_source_1.3.tar.gz \
-    && cd /peer/build/ \
-    && cmake /peer \
-    && make \
-    && make install \
-    && cd / \
-    && rm -rf /peer /peer_source_1.3.tar.gz
+alias pip=pip3
+pip install wheel
+pip install mofapy2
+python --version
 
 # Install R PEER
-wget https://github.com/downloads/PMBio/peer/R_peer_source_1.3.tgz && R CMD INSTALL R_peer_source_1.3.tgz && rm -f R_peer_source_1.3.tgz
 R --slave -e 'install.packages(c("dplyr", "tibble", "readr", "modelr", "purrr", "devtools"), repos="http://cran.rstudio.com/")'
 R --slave -e 'devtools::install_github("bioFAM/MOFA2", build_opts = c("--no-resave-data --no-build-vignettes"))'
 echo "exec /bin/bash "$@"" >> /entrypoint.sh
