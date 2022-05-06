@@ -14,6 +14,7 @@ apt-get update && \
 DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 cpp \
 python3-pip \
+python3-setuptools \
 libpcre2-dev \
 libgirepository-1.0-1 \
 libglib2.0-0 \
