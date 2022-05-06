@@ -14,8 +14,12 @@ apt-get update && \
 DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 default-jdk \
 cpp \
+python3-dev \
+python3-venv \
+python3-wheel \
 python3-pip \
 python3-setuptools \
+libpq-dev \
 libpng-dev \
 libpcre2-dev \
 libgirepository-1.0-1 \
@@ -58,6 +62,7 @@ tar xzvf xz-5.2.2.tar.gz && cd xz-5.2.2 && ./configure && make && make install &
 tar -xzf R-4.2.0.tar.gz && cd R-4.2.0 && ./configure --prefix=/usr/lib/R/ --with-blas --with-readline=no && \
 make && make install && ln -s /usr/lib/R/bin/R /bin/R && ln -s /usr/lib/R/bin/Rscript /bin/Rscript && \
 cd .. && rm -rf R-4.2.0*
+pip3 install wheel
 pip3 install mofapy2
 wget https://github.com/downloads/PMBio/peer/R_peer_source_1.3.tgz && R CMD INSTALL R_peer_source_1.3.tgz && rm -f R_peer_source_1.3.tgz
 R --slave -e 'install.packages(c("dplyr", "tibble", "readr", "modelr", "purrr", "devtools"), repos="http://cran.rstudio.com/")'
