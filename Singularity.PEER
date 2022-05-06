@@ -63,6 +63,7 @@ tar -xzf R-4.2.0.tar.gz && cd R-4.2.0 && ./configure --prefix=/usr/lib/R/ --with
 make && make install && ln -s /usr/lib/R/bin/R /bin/R && ln -s /usr/lib/R/bin/Rscript /bin/Rscript && \
 cd .. && rm -rf R-4.2.0*
 pip3 install wheel
+alias python=python3
 pip3 install mofapy2
 
 # Install Python PEER
