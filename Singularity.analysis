@@ -8,6 +8,7 @@ su -  root # USER root
 
 # Install JAVA and GIT
 apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y default-jdk git && \
+apt-get install libbz2-dev
 apt-get clean && \
 apt-get autoremove -y && \
 rm -rf /var/lib/{apt,dpkg,cache,log}/
