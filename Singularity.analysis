@@ -7,7 +7,7 @@ maintainer="Travyse Edwards<travyse.edwards@icahn.mssm.edu>"
 su -  root # USER root
 
 # Install JAVA and GIT
-apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y default-jdk git libbz2-dev && \
+apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y default-jdk git libbz2-dev miller && \
 apt-get clean && \
 apt-get autoremove -y && \
 rm -rf /var/lib/{apt,dpkg,cache,log}/
@@ -25,6 +25,11 @@ R --slave -e "install.packages(c('devtools',
                                 'testthat'), repos='https://cran.r-project.org/')"
 R --slave -e "BiocManager::install(c('SeqVarTools', 'SNPRelate', 'SeqArray', 'GENESIS'))"
 R --slave -e "devtools::install_github('hanchenphd/GMMAT')"
+
+# Install SnpEff that contains SnpSift
+cd && wget https://snpeff.blob.core.windows.net/versions/snpEff_latest_core.zip && \
+unzip -o snpEff_latest_core.zip
+SNPSIFT_JAR=$HOME/snpEff/snpEff.jar
 
 %runscript
 exec /bin/bash exec /bin/bash "$@"
