@@ -25,3 +25,8 @@ R --slave -e "install.packages(c('devtools',
                                 'testthat'), repos='https://cran.r-project.org/')"
 R --slave -e "BiocManager::install(c('SeqVarTools', 'SNPRelate', 'SeqArray', 'GENESIS'))"
 R --slave -e "devtools::install_github('hanchenphd/GMMAT')"
+
+%runscript
+exec /bin/bash exec /bin/bash "$@"
+%startscript
+exec /bin/bash exec /bin/bash "$@"
