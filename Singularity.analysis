@@ -22,7 +22,8 @@ R --slave -e "install.packages(c('devtools',
                                 'doMC',
                                 'foreach',
                                 'Matrix',
-                                'testthat'), repos='https://cran.r-project.org/')"
+                                'testthat',
+                                'igraph'), repos='https://cran.r-project.org/')"
 R --slave -e "BiocManager::install(c('SeqVarTools', 'SNPRelate', 'SeqArray', 'GENESIS'))"
 R --slave -e "devtools::install_github('hanchenphd/GMMAT')"
 
