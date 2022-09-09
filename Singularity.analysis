@@ -24,7 +24,7 @@ R --slave -e "install.packages(c('devtools',
                                 'Matrix',
                                 'testthat',
                                 'igraph'), repos='https://cran.r-project.org/')"
-R --slave -e "BiocManager::install(c('SeqVarTools', 'SNPRelate', 'SeqArray', 'GENESIS'))"
+R --slave -e "BiocManager::install(c('SeqVarTools', 'SNPRelate', 'SeqArray', 'GENESIS', 'Rsamtools'))"
 R --slave -e "devtools::install_github('hanchenphd/GMMAT')"
 
 # Install SnpEff that contains SnpSift
