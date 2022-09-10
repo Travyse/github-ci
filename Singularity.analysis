@@ -32,7 +32,7 @@ cd && wget https://snpeff.blob.core.windows.net/versions/snpEff_latest_core.zip 
 unzip -o snpEff_latest_core.zip
 
 %environment
-  export SNPSIFT_JAR=$HOME/snpEff/snpEff.jar
+  export SNPSIFT_JAR=$(pwd)/snpEff/snpEff.jar
 
 %runscript
 exec /bin/bash exec /bin/bash "$@"
