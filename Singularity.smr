@@ -14,7 +14,8 @@ rm -rf /var/lib/{apt,dpkg,cache,log}/
 
 R --slave -e "install.packages('tidyverse', repos='https://cran.r-project.org/')"
 
-pip3 install pandas numpy scipy pyensembl
+python3 -m ensurepip --upgrade
+pip install pandas numpy scipy pyensembl
 pyensembl install --release 103 --species human
 
 # Install SMR
