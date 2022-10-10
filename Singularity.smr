@@ -12,7 +12,8 @@ apt-get clean && \
 apt-get autoremove -y && \
 rm -rf /var/lib/{apt,dpkg,cache,log}/
 
-R --slave -e "install.packages('tidyverse', repos='https://cran.r-project.org/')"
+R --slave -e "install.packages(c('tidyverse', 'devtools'), repos='https://cran.r-project.org/')"
+R --slave -e "devtools::install_github('jdstorey/qvalue')"
 
 pip install pandas numpy scipy pyensembl
 pyensembl install --release 103 --species human
