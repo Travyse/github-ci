@@ -34,6 +34,13 @@ cd && wget https://snpeff.blob.core.windows.net/versions/snpEff_latest_core.zip 
 unzip -o snpEff_latest_core.zip &&  \
 mv snpEff /opt
 
+# Install bcftools-1.16
+cd /opt && \
+wget --no-check-certificate https://github.com/samtools/bcftools/releases/download/1.16/bcftools-1.16.tar.bz2 && \
+tar -xf bcftools-1.16.tar.bz2 && rm bcftools-1.16.tar.bz2 && cd bcftools-1.16 && \
+./configure && make && make install && make clean
+cd
+
 %runscript
 exec /bin/bash exec /bin/bash "$@"
 %startscript
