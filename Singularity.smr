@@ -12,7 +12,9 @@ apt-get clean && \
 apt-get autoremove -y && \
 rm -rf /var/lib/{apt,dpkg,cache,log}/
 
-R --slave -e "install.packages(c('tidyverse', 'devtools'), repos='https://cran.r-project.org/')"
+R --slave -e "install.packages(c('tidyverse', 'devtools', 'remotes', 'xfun', 'markdown'), repos='https://cran.r-project.org/')"
+R --slave -e "remotes::install_github('MRCIEU/TwoSampleMR')"
+R --slave -e "remotes::install_github('mrcieu/ieugwasr')"
 R --slave -e "devtools::install_github('jdstorey/qvalue')"
 
 pip install pandas numpy scipy pyensembl
