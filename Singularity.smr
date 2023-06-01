@@ -7,7 +7,7 @@ maintainer="Travyse Edwards<travyse.edwards@icahn.mssm.edu>"
 su -  root # USER root
 
 # Install JAVA and GIT
-apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y default-jdk git libbz2-dev miller python3 python3-pip plink1.9 && \
+apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y default-jdk git libbz2-dev miller python3 python3-pip plink1.9 python-is-python3 && \
 apt-get clean && \
 apt-get autoremove -y && \
 rm -rf /var/lib/{apt,dpkg,cache,log}/
